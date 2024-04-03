@@ -3,10 +3,10 @@
 # @Created Time: 7/8/2020 9:34 PM
 
 Entities_list = [
-    "company",
-    "address",
-    "date",
-    "total"
+    "COMPANY",
+    "ADDRESS",
+    "DATE",
+    "TOTAL"
 ]
 
 # Entities_list = [
