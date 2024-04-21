@@ -2,7 +2,7 @@
     "name": "PICK_Default",
     "run_id":"test",
 
-    "distributed":true,
+    "distributed":false,
     "local_world_size":4,
     "local_rank":-1,
 
@@ -16,8 +16,8 @@
             "encoder_kwargs":{
                 "char_embedding_dim":-1,
                 "out_dim": 512,
-                "nheaders": 4,
-                "nlayers": 3,
+                "nheaders": 8,
+                "nlayers": 6,
                 "feedforward_dim": 1024,
                 "dropout": 0.1,
                 "image_encoder": "resnet50",
@@ -28,9 +28,9 @@
                 "in_dim":-1,
                 "out_dim":-1,
                 "eta": 1,
-                "gamma": 1,
+                "gamma": 0.4,
                 "learning_dim": 128,
-                "num_layers": 2
+                "num_layers": 1
             },
             "decoder_kwargs":{
                 "bilstm_kwargs":{
@@ -79,20 +79,20 @@
     "train_data_loader": {
         "type": "DataLoader",
         "args":{
-            "batch_size": 4,
+            "batch_size": 8,
             "shuffle": true,
             "drop_last": true,
-            "num_workers": 8,
+            "num_workers": 4,
             "pin_memory":true
         }
     },
     "val_data_loader": {
           "type": "DataLoader",
           "args":{
-              "batch_size": 4,
+              "batch_size": 8,
               "shuffle": false,
               "drop_last": false,
-              "num_workers": 8,
+              "num_workers": 4,
               "pin_memory":true
           }
       },
@@ -117,10 +117,10 @@
         "epochs": 100,
         "gl_loss_lambda": 0.01,
         "log_step_interval": 10,
-        "val_step_interval": 50,
+        "val_step_interval": 100,
 
         "save_dir": "saved/",
-        "save_period": 20,
+        "save_period":100,
         "log_verbosity": 2,
 
         "monitor": "max overall-mEF",

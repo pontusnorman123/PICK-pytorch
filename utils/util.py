@@ -58,7 +58,8 @@ def iob_index_to_str(tags: List[List[int]]):
         for tag in doc:
             s = iob_labels_vocab_cls.itos[tag]
             if s == '<unk>' or s == '<pad>':
-                s = 'O'
+                #s = 'O'
+                s = ' '
             decoded_tags.append(s)
         decoded_tags_list.append(decoded_tags)
     return decoded_tags_list
@@ -75,7 +76,8 @@ def text_index_to_str(texts: torch.Tensor, mask: torch.Tensor):
         for text_index in union_texts[i]:
             text_str = keys_vocab_cls.itos[text_index]
             if text_str == '<unk>' or text_str == '<pad>':
-                text_str = 'O'
+                #text_str = 'O'
+                text_str = ' '
             decoded_text.append(text_str)
         decoded_tags_list.append(decoded_text)
     return decoded_tags_list

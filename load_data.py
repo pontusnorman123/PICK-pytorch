@@ -3,7 +3,7 @@ from datasets import load_dataset
 # this dataset uses the new Image feature :)
 #dataset = load_dataset("Hyeoli/layoutlmv3_cord")
 #dataset = load_dataset("pontusnorman123/swe_set2")
-dataset_dict = load_dataset("pontusnorman123/swe_set2")
+dataset_dict = load_dataset("pontusnorman123/swe_set2_973_sroie")
 
 import pandas as pd
 from PIL import Image
@@ -60,7 +60,7 @@ def process_dataset(dataset, dataset_type, base_path):
 
     # Create samples_list.csv for both training and testing data
     df = pd.DataFrame(samples_list, columns=['index', 'document_type', 'file_name'])
-    df.to_csv(f"{base_path}/{dataset_type}_samples_list.csv", index=False)
+    df.to_csv(f"{base_path}/{dataset_type}_samples_list.csv", index=False, header=False)
 
 
 # Paths for the dataset types

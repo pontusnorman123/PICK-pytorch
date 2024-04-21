@@ -89,6 +89,7 @@ def main(args):
                         f.write('{}\t{}\n'.format(item['entity_name'], item['text']))
 
 
+
 if __name__ == '__main__':
     args = argparse.ArgumentParser(description='PyTorch PICK Testing')
     args.add_argument('-ckpt', '--checkpoint', default=None, type=str,
