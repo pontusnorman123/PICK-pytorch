@@ -3,7 +3,7 @@ from datasets import load_dataset
 # this dataset uses the new Image feature :)
 #dataset = load_dataset("Hyeoli/layoutlmv3_cord")
 #dataset = load_dataset("pontusnorman123/swe_set2")
-dataset_dict = load_dataset("pontusnorman123/swe_set2_973_sroie")
+dataset_dict = load_dataset("pontusnorman123/sweset3")
 
 import pandas as pd
 from PIL import Image
@@ -16,7 +16,9 @@ tag_mapping = {
     1: 'DATE',
     2: 'ADDRESS',
     3: 'TOTAL',
-    4: 'others'
+    4: 'TAX',
+    5: 'PRODUCT',
+    6: 'others'
 }
 
 
