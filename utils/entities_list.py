@@ -6,7 +6,9 @@ Entities_list = [
     "COMPANY",
     "ADDRESS",
     "DATE",
-    "TOTAL"
+    "TOTAL",
+    "TAX",
+    "PRODUCT"
 ]
 
 # Entities_list = [

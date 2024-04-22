@@ -2,7 +2,7 @@
     "name": "PICK_Default",
     "run_id":"test",
 
-    "distributed":false,
+    "distributed":true,
     "local_world_size":4,
     "local_rank":-1,
 
@@ -16,8 +16,8 @@
             "encoder_kwargs":{
                 "char_embedding_dim":-1,
                 "out_dim": 512,
-                "nheaders": 8,
-                "nlayers": 6,
+                "nheaders": 4,
+                "nlayers": 3,
                 "feedforward_dim": 1024,
                 "dropout": 0.1,
                 "image_encoder": "resnet50",
@@ -28,9 +28,9 @@
                 "in_dim":-1,
                 "out_dim":-1,
                 "eta": 1,
-                "gamma": 0.4,
+                "gamma": 1,
                 "learning_dim": 128,
-                "num_layers": 1
+                "num_layers": 2
             },
             "decoder_kwargs":{
                 "bilstm_kwargs":{
@@ -53,6 +53,7 @@
             }
         }
     },
+
 
     "train_dataset": {
         "type": "PICKDataset",
@@ -114,18 +115,18 @@
     },
 
     "trainer": {
-        "epochs": 100,
+        "epochs": 50,
         "gl_loss_lambda": 0.01,
         "log_step_interval": 10,
-        "val_step_interval": 100,
+        "val_step_interval": 249,
 
         "save_dir": "saved/",
-        "save_period":100,
+        "save_period":249,
         "log_verbosity": 2,
 
         "monitor": "max overall-mEF",
         "monitor_open": true,
-        "early_stop": 40,
+        "early_stop": 50,
 
         "anomaly_detection": false,
         "tensorboard": false,

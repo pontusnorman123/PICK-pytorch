@@ -143,7 +143,7 @@ if __name__ == '__main__':
     options = [
         # CustomArgs(['--lr', '--learning_rate'], default=0.0001, type=float, target='optimizer;args;lr',
         #            help='learning rate (default: 0.0001)'),
-        CustomArgs(['--bs', '--batch_size'], default=2, type=int, target='train_data_loader;args;batch_size',
+        CustomArgs(['--bs', '--batch_size'], default=1, type=int, target='train_data_loader;args;batch_size',
                    help='batch size (default: 2)'),
         # CustomArgs(['--ng', '--n_gpu'], default=2, type=int, target='n_gpu',
         #            help='num of gpu (default: 2)'),
