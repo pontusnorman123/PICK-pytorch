@@ -115,21 +115,21 @@
     },
 
     "trainer": {
-        "epochs": 50,
+        "epochs": 100,
         "gl_loss_lambda": 0.01,
         "log_step_interval": 10,
-        "val_step_interval": 249,
+        "val_step_interval": 1000,
 
         "save_dir": "saved/",
-        "save_period":249,
+        "save_period":20,
         "log_verbosity": 2,
 
         "monitor": "max overall-mEF",
         "monitor_open": true,
-        "early_stop": 50,
+        "early_stop": 100,
 
         "anomaly_detection": false,
-        "tensorboard": false,
+        "tensorboard": true,
 
         "sync_batch_norm":true
     }
